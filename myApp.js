@@ -6,7 +6,10 @@ function serve_string(req, res){
     res.send("Hello Express");
 }
 
-app.get("",serve_string);
+//app.get("",serve_string);
+absolutePath = __dirname + 'views/index.html';
+
+app.get("", absolutePath);
 
 
 
