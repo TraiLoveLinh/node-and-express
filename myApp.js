@@ -24,12 +24,10 @@ function serve_json(req, res){
 app.get("/json", serve_json);
 */
 app.get("/json", (req, res)=>{
+    const messageStyle = process.env.MESSAGE_STYLE;
     const data = {
-        "message":"Hello json"
+        "message": (messageStyle==='uppercase') ? "HELLO JSON" : "Hello Json"
     }
-    if (process.env.MESSAGE_STYLE===process.env.msg_cmpr){
-        data["message"] = data["message"].toUpperCase();
-    };
     res.json(data);
 });
 
