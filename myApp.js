@@ -7,7 +7,10 @@ console.log("Hello World");
 //}
 //app.get("",serve_string);
 let absolutePath = __dirname + '/views/index.html';
-app.get("", res.sendFile(absolutePath));
+function serve_file(req, res){
+    res.sendFile(absolutePath);
+}
+app.get("", serve_file);
 
 
 
