@@ -8,7 +8,7 @@ console.log("Hello World");
 //app.get("",serve_string);
 let indexIhtml_absolutePath = __dirname + '/views/index.html'; 
 function serve_file(req, res){
-    res.sendFile(indexIhtml_absolutePathabsolutePath);
+    res.sendFile(indexIhtml_absolutePath);
 }
 app.get("", serve_file);
 
