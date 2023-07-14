@@ -13,6 +13,7 @@ function serve_file(req, res){
 }
 app.get("", serve_file);
 app.use("/public", express.static(__dirname + '/public'));
+/*
 function serve_json(req, res){
     const data = {
         "message": "Hello json"
@@ -20,6 +21,12 @@ function serve_json(req, res){
     res.json(data);
 }
 app.get("/json", serve_json);
+*/
+app.get("/json", (req, res)=>{
+    const data = {
+        "message":"Hello json"
+    }
+});
 
 
 
