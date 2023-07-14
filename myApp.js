@@ -31,7 +31,7 @@ app.get("/json", (req, res)=>{
     
     res.json(data);
 });
-console.log(fm);
+
 
 
 
