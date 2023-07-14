@@ -19,7 +19,7 @@ function serve_json(req, res){
     }
     res.json(data);
 }
-app.get("/json". serve_json);
+app.get("/json", serve_json);
 
 
 
