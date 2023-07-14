@@ -9,7 +9,7 @@ console.log("Hello World");
 //app.get("",serve_string);
 let absolutePath = __dirname + '/views/index.html';
 
-app.get(absolutePath, res.sendFile());
+app.get("", res.sendFile(absolutePath));
 
 
 
