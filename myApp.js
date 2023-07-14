@@ -12,9 +12,14 @@ function serve_file(req, res){
     res.sendFile(indexIhtml_absolutePath);
 }
 app.get("", serve_file);
-
-
 app.use("/public", express.static(__dirname + '/public'));
+function serve_json(req, res){
+    const data = {
+        "message": "Hello json"
+    }
+    res.json(data);
+}
+app.get("/json". serve_json);
 
 
 
