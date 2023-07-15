@@ -36,22 +36,27 @@ app.get("/json", (req, res)=>{
 */
 
 app.use("", (req, res, next) => {
-    console.log(req.method + " " + req.path+ " - " + req.ip);
+    console.log(req.method + " " + req.path + " - " + req.ip);
     next();
 });
 
 
-app.get('/now', function(req, res, next) {
+app.get('/now', function (req, res, next) {
     req.time = new Date().toString();
     next();
-  }, function(req, res) {
+}, function (req, res) {
     data = {
         time: req.time
     }
     res.json(data);
-  });
-
-
+});
+app.get('/:word/echo', function(req, res, next){
+    const word = req.params.word;
+    const data = {
+        echo: word
+    }
+    res.json(data);
+});
 
 
 
