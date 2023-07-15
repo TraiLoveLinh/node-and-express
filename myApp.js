@@ -66,6 +66,12 @@ app.get('/name', function(req, res){
     res.json(data);
 });
 app.use("", bodyParser.urlencoded({extended: false}));
+app.post('/name', function(req, res){
+    const data = {
+        name: req.body['first'] + " " + req.body['last']
+    };
+    res.json(data);
+});
 
 
 
