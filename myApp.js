@@ -1,7 +1,9 @@
 const path = require('path');
 
+
 require('dotenv').config({ path: path.resolve(__dirname, '/.env') });
 let express = require('express');
+const bodyParser = require('body-parser');
 let app = express();
 //console.log("Hello World");
 
@@ -63,8 +65,7 @@ app.get('/name', function(req, res){
     };
     res.json(data);
 });
-
-
+app.use("", bodyParser.urlencoded({extended: false}));
 
 
 
