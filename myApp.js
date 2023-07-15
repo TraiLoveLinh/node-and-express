@@ -59,7 +59,7 @@ app.get('/:word/echo', function(req, res, next){
 });
 app.get('/name', function(req, res){
     const data = {
-        name: req.query['first'] + req.query['last']
+        name: req.query['first'] + " " + req.query['last']
     };
     res.json(data);
 });
