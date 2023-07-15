@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({path:'/etc/secrets/.env'});
 let express = require('express');
 const bodyParser = require('body-parser');
 let app = express();
@@ -23,6 +23,7 @@ function serve_json(req, res){
     res.json(data);
 }
 app.get("/json", serve_json);
+*/
 
 const messageStyle = process.env.MESSAGE_STYLE;
 app.get("/json", (req, res)=>{
@@ -32,7 +33,7 @@ app.get("/json", (req, res)=>{
     }
     res.json(data);
 });
-*/
+
 
 app.use("", (req, res, next) => {
     console.log(req.method + " " + req.path + " - " + req.ip);
