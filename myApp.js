@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config(__dirname + "/.env");
 let express = require('express');
 let app = express();
 console.log("Hello World");
