@@ -41,7 +41,15 @@ app.use("", (req, res, next) => {
 });
 
 
-
+app.get('/now', function(req, res, next) {
+    req.time = new Date().toString();
+    next();
+  }, function(req, res) {
+    data = {
+        time: req.time
+    }
+    res.json(data);
+  });
 
 
 
