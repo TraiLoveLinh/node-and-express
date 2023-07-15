@@ -1,17 +1,17 @@
-const path =  require('path');
+const path = require('path');
 
-require('dotenv').config({path: path.resolve(__dirname, '/.env')});
+require('dotenv').config({ path: path.resolve(__dirname, '/.env') });
 let express = require('express');
 let app = express();
-console.log("Hello World");
+//console.log("Hello World");
 
 //function serve_string(req, res){
 //    res.send("Hello Express");
 //}
 //app.get("",serve_string);
- 
-let indexIhtml_absolutePath = __dirname + '/views/index.html'; 
-function serve_file(req, res){
+
+let indexIhtml_absolutePath = __dirname + '/views/index.html';
+function serve_file(req, res) {
     res.sendFile(indexIhtml_absolutePath);
 }
 app.get("", serve_file);
@@ -24,7 +24,7 @@ function serve_json(req, res){
     res.json(data);
 }
 app.get("/json", serve_json);
-*/
+
 const messageStyle = process.env.MESSAGE_STYLE;
 app.get("/json", (req, res)=>{
     
@@ -33,20 +33,12 @@ app.get("/json", (req, res)=>{
     }
     res.json(data);
 });
+*/
 
-
-
-
-
-
-
- 
-
-
-
-
-
-
+app.use("", (req, res, next) => {
+    console.log(req.method() + " " + req.path()+ " - " + req.ip());
+    next();
+});
 
 
 
@@ -65,4 +57,18 @@ app.get("/json", (req, res)=>{
 
 
 
- module.exports = app;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = app;
