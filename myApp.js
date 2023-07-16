@@ -1,4 +1,4 @@
-require('dotenv').config({path:'/etc/secrets/.env'});
+require('dotenv').config();
 let express = require('express');
 const bodyParser = require('body-parser');
 let app = express();
@@ -33,7 +33,7 @@ app.get("/json", (req, res)=>{
     }
     if (messageStyle == 'uppercase'){
         data['message'] = data['message'].toUpperCase();
-        
+
     }
     res.json(data);
 });
